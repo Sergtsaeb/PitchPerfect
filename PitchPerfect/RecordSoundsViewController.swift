@@ -25,16 +25,25 @@
             
         }
         
-        override func didReceiveMemoryWarning() {
-            super.didReceiveMemoryWarning()
-            // Dispose of any resources that can be recreated.
+        func setUIState(recordState isRecording:Bool, textValue recordingText:String)
+        {
+            
+            recordingLabel.text? = recordingText
+            
+            if isRecording == true {
+                recordButton.isEnabled = false
+                stopRecordingButton.isEnabled = true
+            } else {
+                stopRecordingButton.isEnabled = true
+                recordButton.isEnabled = false
+            }
         }
         
         @IBAction func recordAudio(_ sender: Any) {
             
-            recordingLabel.text = "Recording in progress"
-            stopRecordingButton.isEnabled = true
-            recordButton.isEnabled = false
+            
+            setUIState(recordState: false, textValue: "Recording in progress")
+            
             
             let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
             
@@ -56,12 +65,8 @@
         
         
         @IBAction func stopRecording(_ sender: Any) {
-        
-        
-            print("Stop recording button pressed")
-            recordButton.isEnabled = true
-            stopRecordingButton.isEnabled = false
-            recordingLabel.text = "Tap to Record"
+            
+            setUIState(recordState: true , textValue: "Tap to record")
             
             audioRecorder.stop()
             let audioSession = AVAudioSession.sharedInstance()
@@ -75,7 +80,7 @@
         func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
             print("AVAudioRecorder finished saving recording")
             if (flag) {
-                self.performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
+                performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
             } else {
                 print("Saving of recording failed")
             }
@@ -92,7 +97,3 @@
         
     }
     
-    
-    
-
-
