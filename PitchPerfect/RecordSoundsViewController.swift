@@ -23,6 +23,9 @@
             super.viewDidLoad()
             stopRecordingButton.isEnabled = false
             
+            recordButton.imageView?.contentMode = .scaleAspectFit
+            stopRecordingButton.imageView?.contentMode = .scaleAspectFit
+            
         }
         
         func setUIState(recordState isRecording:Bool, textValue recordingText:String)
