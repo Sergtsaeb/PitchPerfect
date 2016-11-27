@@ -76,13 +76,9 @@
             try! audioSession.setActive(false)
         }
         
-        override func viewWillAppear(_ animated: Bool) {
-            print("viewWillAppear called")
-        }
         
         func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-            print("AVAudioRecorder finished saving recording")
-            if (flag) {
+            if flag {
                 performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
             } else {
                 print("Saving of recording failed")

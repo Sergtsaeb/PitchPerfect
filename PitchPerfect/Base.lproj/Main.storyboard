@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tTh-qm-Orn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tTh-qm-Orn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,8 +29,8 @@
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SYC-JZ-jtn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpY-Gd-rIS">
-                                <rect key="frame" x="162.5" y="479" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpY-Gd-rIS">
+                                <rect key="frame" x="162.5" y="479" width="50" height="188"/>
                                 <state key="normal" image="stopRecord"/>
                                 <connections>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eei-EI-0oU"/>
@@ -49,6 +49,7 @@
                             <constraint firstItem="Utn-cH-Kbj" firstAttribute="centerX" secondItem="AdY-vZ-6HH" secondAttribute="centerX" id="EFW-BD-qSV"/>
                             <constraint firstItem="NpY-Gd-rIS" firstAttribute="centerX" secondItem="Utn-cH-Kbj" secondAttribute="centerX" id="IKZ-8F-LT5"/>
                             <constraint firstItem="AdY-vZ-6HH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IrZ-mw-6W5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NpY-Gd-rIS" secondAttribute="bottom" id="MO1-1f-sP4"/>
                             <constraint firstItem="NpY-Gd-rIS" firstAttribute="top" secondItem="Utn-cH-Kbj" secondAttribute="bottom" constant="39" id="eaC-B6-eqX"/>
                             <constraint firstItem="Utn-cH-Kbj" firstAttribute="top" secondItem="AdY-vZ-6HH" secondAttribute="bottom" constant="36" id="sa3-eI-cKY"/>
                         </constraints>
