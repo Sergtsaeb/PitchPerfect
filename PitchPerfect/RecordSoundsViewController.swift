@@ -37,15 +37,15 @@
                 recordButton.isEnabled = false
                 stopRecordingButton.isEnabled = true
             } else {
-                stopRecordingButton.isEnabled = true
-                recordButton.isEnabled = false
+                stopRecordingButton.isEnabled = false
+                recordButton.isEnabled = true
             }
         }
         
         @IBAction func recordAudio(_ sender: Any) {
             
             
-            setUIState(recordState: false, textValue: "Recording in progress")
+            setUIState(recordState: true, textValue: "Recording in progress")
             
             
             let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
@@ -69,7 +69,7 @@
         
         @IBAction func stopRecording(_ sender: Any) {
             
-            setUIState(recordState: true , textValue: "Tap to record")
+            setUIState(recordState: false , textValue: "Tap to record")
             
             audioRecorder.stop()
             let audioSession = AVAudioSession.sharedInstance()
